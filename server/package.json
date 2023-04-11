@@ -11,14 +11,24 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
     "pg": "^8.10.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.30.0"
+    "react-star-ratings": "^2.3.0",
+    "sequelize": "^6.30.0",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "css-loader": "^6.7.3",
+    "nodemon": "^2.0.22",
+    "sass-loader": "^13.2.2",
+    "sequelize-cli": "^6.6.0",
+    "style-loader": "^3.3.2"
   }
 }

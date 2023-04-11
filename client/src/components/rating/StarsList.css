@@ -1,0 +1,20 @@
+.star-rating {
+	width: 277px;
+	display: flex;
+	margin-bottom: 5px;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.star {
+	height: 35px;
+	position: relative;
+	bottom: 0%;
+}
+
+.star-symbol {
+	height: 35px;
+	position: relative;
+	bottom: 35%;
+}
