@@ -23,26 +23,7 @@ const App = () => {
         item.setTotalCount(data.count)
       });
   }, [])
-  useEffect(() => {
-    if(user.isAuth){
-      fetchCart().then(data => {
-        if(user.isAuth){
-          item.setCart(data)
-        }
-      })
-      fetchCartItems()
-      .then(data => {
-        console.log(data.rows)
-        if(user.isAuth){
-          item.setCartItems(data.rows)
-          item.setCartItemCount(0)
-          item.cartItems.forEach(cartItem => {
-            item.setCartItemCount(item.cartItemCount + cartItem.quantity)
-          })
-        }
-      })
-    }
-  }, [user.isAuth, item.cartItems])
+  
 
 
 
