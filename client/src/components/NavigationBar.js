@@ -6,9 +6,31 @@ import { ADMIN_ROUTE, CART_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/const
 import {observer} from 'mobx-react-lite';
 import { useNavigate } from 'react-router-dom';
 import cart from '../assets/shopping_cart.svg'
+import { fetchCart, fetchCartItems } from '../http/itemAPI.js';
 const NavigationBar = observer(() => { //чтобы панель перерендерилась в режиме реального времени
 	const {user, item} = useContext(Context)
 	const navigate = useNavigate();
+	useEffect(() => {
+		if(user.isAuth){
+		  fetchCart().then(data => {
+			if(user.isAuth){
+			  item.setCart(data)
+			}
+		  })
+		  fetchCartItems()
+		  .then(data => {
+			console.log(data.rows)
+			if(user.isAuth){
+			  item.setCartItems(data.rows)
+			  item.setCartItemCount(0)
+			  item.cartItems.forEach(cartItem => {
+				item.setCartItemCount(item.cartItemCount + cartItem.quantity)
+			  })
+			}
+		  })
+		}
+	  }, [user.isAuth])
+
 	useEffect(() => {
         const prices = [];
 		if(item.cartItems.length > 0 && item.items.length > 0){
