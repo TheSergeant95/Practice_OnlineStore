@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import basket from '../assets/basket.svg'
-import { Button, Card, Col, Dropdown, Form, Image, Row } from 'react-bootstrap';
+import { Button, Card, Col, Dropdown, Image, Row } from 'react-bootstrap';
 import { Context } from '../index.js';
 import { observer } from 'mobx-react-lite';
 import { decrementCartItem, fetchCartItems, incrementCartItem } from '../http/itemAPI';

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import CartItemList from '../components/CartItemList';
 import { Context } from '../index.js';
-import { clearCart, fetchCartItems, fetchItems, fetchManufacturers, fetchTypes } from '../http/itemAPI';
+import { clearCart, fetchCartItems, fetchManufacturers } from '../http/itemAPI';
 import { observer } from 'mobx-react-lite';
 import CartOrderWindow from '../components/CartOrderWindow';
 import ModalOrderCompleted from '../components/modals/ModalOrderCompleted';

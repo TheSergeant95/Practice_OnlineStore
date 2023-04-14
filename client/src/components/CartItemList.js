@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../index.js';
 import CartItemComponent from './cartItemComponent.js';
 import { observer } from 'mobx-react-lite';
-import { clearCart, fetchCartItems, removeCartItem } from '../http/itemAPI.js';
+import { fetchCartItems, removeCartItem } from '../http/itemAPI.js';
 
 const CartItemList = observer(() => {
 	const {item} = useContext(Context)
