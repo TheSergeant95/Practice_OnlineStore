@@ -23,11 +23,7 @@ const Cart = observer(() => {
 			clearCart()
 			.then(() => fetchCartItems())
 			.then(data => {
-			item.setCartItems(data.rows)
-			item.setCartItemCount(0)
-			item.cartItems.forEach(cartItem => {
-				item.setCartItemCount(item.cartItemCount + cartItem.quantity)
-			})
+			item.updateCartInfo(data)
 		})
 		}, 5000);
 	}

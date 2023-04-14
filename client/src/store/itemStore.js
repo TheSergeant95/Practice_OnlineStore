@@ -83,6 +83,14 @@ export default class ItemStore{
 		this._cart = cart;
 	}
 
+	updateCartInfo(data) {
+		this._cartItems = data.rows;
+		this._cartItemCount = 0;
+		this._cartItems.forEach(cartItem => {
+			this._cartItemCount = (this._cartItemCount + cartItem.quantity)
+		})
+	}
+
 	setCartPrice(price) {
 		this._cartPrice = price;
 	}

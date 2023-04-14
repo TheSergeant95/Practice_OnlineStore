@@ -20,20 +20,12 @@ const CartItemComponent = observer(({itemCard, removeFromCart}) => {
 		if(quantity > 0){
 			incrementCartItem(itemId, quantity).then(() => fetchCartItems())
 			.then(data => {
-				item.setCartItems(data.rows)
-				item.setCartItemCount(0)
-				item.cartItems.forEach(cartItem => {
-					item.setCartItemCount(item.cartItemCount + cartItem.quantity)
-				})
+				item.updateCartInfo(data)
 			})
 		} else if(quantity < 0){
 			decrementCartItem(itemId, quantity * (-1)).then(() => fetchCartItems())
 			.then(data => {
-				item.setCartItems(data.rows)
-				item.setCartItemCount(0)
-				item.cartItems.forEach(cartItem => {
-					item.setCartItemCount(item.cartItemCount + cartItem.quantity)
-				})
+				item.updateCartInfo(data)
 			})
 		}
 	}

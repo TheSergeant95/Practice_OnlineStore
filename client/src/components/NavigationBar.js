@@ -19,13 +19,8 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 		  })
 		  fetchCartItems()
 		  .then(data => {
-			console.log(data.rows)
 			if(user.isAuth){
-			  item.setCartItems(data.rows)
-			  item.setCartItemCount(0)
-			  item.cartItems.forEach(cartItem => {
-				item.setCartItemCount(item.cartItemCount + cartItem.quantity)
-			  })
+			  item.updateCartInfo(data)
 			}
 		  })
 		}
@@ -46,6 +41,7 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 	const logOut = () => {
 		user.setUser({});
 		user.setIsAuth(false)
+		localStorage.removeItem('token')
 		navigate(SHOP_ROUTE)
 	}
 
