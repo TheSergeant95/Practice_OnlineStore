@@ -48,7 +48,7 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 	return (
 		<Navbar sticky="top" bg="dark" variant="dark">
 			<Container>
-				<NavLink style={{color: 'white'}} to={SHOP_ROUTE}>ШторыStore</NavLink>
+				<NavLink style={{color: 'white'}} to={SHOP_ROUTE}>Linen Store</NavLink>
 				{user.isAuth ? 
 				<Nav 
 					className="ml-auto" 
