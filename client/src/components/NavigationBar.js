@@ -49,7 +49,7 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 	return (
 		<Navbar sticky="top" bg="dark" variant="dark">
 			<Container>
-				<div className="d-flex flex-row">
+				<div>
 
 					<NavLink style={{color: 'white'}} to={SHOP_ROUTE}>Linen Store</NavLink>
 					{user.isAuth ? 
@@ -85,7 +85,7 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 					</Nav>
 					}
 				</div>
-				<div className="d-flex flex-row">
+				<div className='bg-dark text-white'>
 					Внимание: данное веб-приложение не является рабочим интернет-магазином, оно является тестовым проектом.
 					Заказ товаров недоступен.
 				</div>
