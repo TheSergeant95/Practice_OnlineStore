@@ -17,7 +17,7 @@ export default class ItemStore{
 		this._cartItemCount = 0;
 		this._page = 1;
 		this._totalCount = 0;
-		this._limit = 6;
+		this._limit = 12;
 		makeAutoObservable(this);
 	}
 
