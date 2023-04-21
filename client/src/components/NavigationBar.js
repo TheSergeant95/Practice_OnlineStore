@@ -47,50 +47,49 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 	}
 
 	return (
-		<Navbar sticky="top" bg="dark" variant="dark">
-			<Container>
-				<div>
-
-					<NavLink style={{color: 'white'}} to={SHOP_ROUTE}>Linen Store</NavLink>
-					{user.isAuth ? 
-					<Nav 
-						className="ml-auto" 
-						style={{color: 'white'}}
-					>
-						<Button className='d-flex justify-content-center align-items-center me-2' variant='dark' onClick={() => navigate(CART_ROUTE)}>
-							<div className='me-3'>{item.cartPrice} руб.</div>
-							<Image  width={40} height={40} src={cart}/>
-						</Button>
-						{user.isAdmin ?
-						<Button 
-							variant='outline-light' 
-							onClick={() => navigate(ADMIN_ROUTE)}
+		<>
+			<Navbar sticky="top" bg="dark" variant="dark">
+				<Container>
+						<NavLink style={{color: 'white'}} to={SHOP_ROUTE}>Linen Store</NavLink>
+						{user.isAuth ? 
+						<Nav 
+							className="ml-auto" 
+							style={{color: 'white'}}
 						>
-							Администраторская
-						</Button>
+							<Button className='d-flex justify-content-center align-items-center me-2' variant='dark' onClick={() => navigate(CART_ROUTE)}>
+								<div className='me-3'>{item.cartPrice} руб.</div>
+								<Image  width={40} height={40} src={cart}/>
+							</Button>
+							{user.isAdmin ?
+							<Button 
+								variant='outline-light' 
+								onClick={() => navigate(ADMIN_ROUTE)}
+							>
+								Администраторская
+							</Button>
+							:
+							null
+							}
+							<Button 
+								variant='outline-light' 
+								onClick={() => logOut()} 
+								className='ms-2'
+							>
+								Выйти
+							</Button>
+						</Nav>
 						:
-						null
+						<Nav className="ml-auto" style={{color: 'white'}}>
+							<Button variant='outline-light' className='ms-2' onClick={() => navigate(LOGIN_ROUTE)}>Войти</Button>
+						</Nav>
 						}
-						<Button 
-							variant='outline-light' 
-							onClick={() => logOut()} 
-							className='ms-2'
-						>
-							Выйти
-						</Button>
-					</Nav>
-					:
-					<Nav className="ml-auto" style={{color: 'white'}}>
-						<Button variant='outline-light' className='ms-2' onClick={() => navigate(LOGIN_ROUTE)}>Войти</Button>
-					</Nav>
-					}
-				</div>
-				<div className='bg-dark text-white'>
+				</Container>
+			</Navbar>
+			<Container height={40} fluid className='bg-dark text-white' style={{padding: '0 50px', zIndex: 4}}>
 					Внимание: данное веб-приложение не является рабочим интернет-магазином, оно является тестовым проектом.
 					Заказ товаров недоступен.
-				</div>
 			</Container>
-      	</Navbar>
+		</>
 	);
 });
 
