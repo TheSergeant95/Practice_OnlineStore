@@ -42,7 +42,6 @@ const App = () => {
     <BrowserRouter>
       <NavigationBar/>
       <AppRouter />
-      <AppFooter/>
     </BrowserRouter>
   );
 }
