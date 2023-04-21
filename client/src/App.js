@@ -25,7 +25,7 @@ const App = () => {
 				  user.setIsAdmin(false)
 			  }
       }).finally(() => setLoading(false));
-      fetchItems(null, null, 1, 6).then(data => {
+      fetchItems(null, null, 1, 12).then(data => {
         item.setItems(data.rows)
         item.setTotalCount(data.count)
       });
