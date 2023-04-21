@@ -17,6 +17,12 @@ const App = () => {
       check().then(data => {
         user.setUser(true);
         user.setIsAuth(true);
+        if(data.role === 'ADMIN')
+			  {
+				  user.setIsAdmin(true)
+			  } else {
+				  user.setIsAdmin(false)
+			  }
       }).finally(() => setLoading(false));
       fetchItems(null, null, 1, 6).then(data => {
         item.setItems(data.rows)
