@@ -6,7 +6,7 @@ import AppRouter from "./components/AppRouter.js";
 import NavigationBar from "./components/NavigationBar.js";
 import { check } from "./http/userAPI.js";
 import { Context } from "./index.js";
-import { fetchCart, fetchCartItems, fetchItems, fetchOneItem } from "./http/itemAPI.js";
+import { fetchItems } from "./http/itemAPI.js";
 
 const App = () => {
   const {user, item} = useContext(Context);
@@ -17,6 +17,12 @@ const App = () => {
       check().then(data => {
         user.setUser(true);
         user.setIsAuth(true);
+        if(data.role === 'ADMIN')
+			  {
+				  user.setIsAdmin(true)
+			  } else {
+				  user.setIsAdmin(false)
+			  }
       }).finally(() => setLoading(false));
       fetchItems(null, null, 1, 6).then(data => {
         item.setItems(data.rows)

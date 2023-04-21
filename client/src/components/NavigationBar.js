@@ -40,7 +40,8 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 	
 	const logOut = () => {
 		user.setUser({});
-		user.setIsAuth(false)
+		user.setIsAuth(false);
+		user.setIsAdmin(false);
 		localStorage.removeItem('token')
 		navigate(SHOP_ROUTE)
 	}
@@ -58,12 +59,16 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 						<div className='me-3'>{item.cartPrice} руб.</div>
 						<Image  width={40} height={40} src={cart}/>
 					</Button>
+					{user.isAdmin ?
 					<Button 
 						variant='outline-light' 
 						onClick={() => navigate(ADMIN_ROUTE)}
 					>
 						Администраторская
 					</Button>
+					:
+					null
+					}
 					<Button 
 						variant='outline-light' 
 						onClick={() => logOut()} 
