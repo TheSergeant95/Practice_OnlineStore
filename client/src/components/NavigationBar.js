@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Context } from '../index.js';
-import {Navbar, Container, Nav, Button, Image, Row} from 'react-bootstrap';
+import {Navbar, Container, Nav, Button, Image} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { ADMIN_ROUTE, CART_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/consts.js';
 import {observer} from 'mobx-react-lite';
@@ -49,7 +49,8 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 	return (
 		<Navbar sticky="top" bg="dark" variant="dark">
 			<Container>
-				<Row>
+				<div className="d-flex flex-row">
+
 					<NavLink style={{color: 'white'}} to={SHOP_ROUTE}>Linen Store</NavLink>
 					{user.isAuth ? 
 					<Nav 
@@ -83,11 +84,11 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 						<Button variant='outline-light' className='ms-2' onClick={() => navigate(LOGIN_ROUTE)}>Войти</Button>
 					</Nav>
 					}
-				</Row>
-				<Row>
+				</div>
+				<div className="d-flex flex-row">
 					Внимание: данное веб-приложение не является рабочим интернет-магазином, оно является тестовым проектом.
 					Заказ товаров недоступен.
-				</Row>
+				</div>
 			</Container>
       	</Navbar>
 	);
