@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 const AppFooter = () => {
 	return (
-		<Container fluid sticky="bottom" bg="dark">
+		<Container fluid className='bg-dark text-white' style={{position: 'sticky', bottom: '0%'}}>
 			Внимание: данное веб-приложение не является рабочим интернет-магазином, оно является тестовым проектом.
 			Заказ товаров недоступен.
 		</Container>
