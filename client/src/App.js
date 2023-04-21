@@ -7,6 +7,7 @@ import NavigationBar from "./components/NavigationBar.js";
 import { check } from "./http/userAPI.js";
 import { Context } from "./index.js";
 import { fetchItems } from "./http/itemAPI.js";
+import AppFooter from "./components/AppFooter.js";
 
 const App = () => {
   const {user, item} = useContext(Context);
@@ -41,6 +42,7 @@ const App = () => {
     <BrowserRouter>
       <NavigationBar/>
       <AppRouter />
+      <AppFooter/>
     </BrowserRouter>
   );
 }
