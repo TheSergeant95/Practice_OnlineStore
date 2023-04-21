@@ -85,7 +85,7 @@ const NavigationBar = observer(() => { //чтобы панель перерен�
 						}
 				</Container>
 			</Navbar>
-			<Container height={40} fluid className='ms-3 bg-dark text-white' style={{padding: '0 50px', zIndex: 4}}>
+			<Container height={40} fluid className='bg-dark text-white' style={{padding: '0 90px', zIndex: 4}}>
 					Внимание: данное веб-приложение не является рабочим интернет-магазином, оно является тестовым проектом.
 					Заказ товаров недоступен.
 			</Container>
