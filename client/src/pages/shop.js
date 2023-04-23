@@ -15,7 +15,7 @@ const Shop = observer(() => {
 	useEffect(() => {
 		fetchTypes().then(data => item.setTypes(data));
 		fetchManufacturers().then(data => item.setManufacturers(data));
-		fetchItems(null, null, 1, 6).then(data => {
+		fetchItems(null, null, 1, 12).then(data => {
 			item.setShopItems(data.rows)
 			item.setItems(data.rows)
 			item.setTotalCount(data.count)
